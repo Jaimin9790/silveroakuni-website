@@ -1,0 +1,213 @@
+<html>
+<head><h3>213 Jaimin Gadhiya</h3>
+<title>Jaimin website </title>
+
+<style>
+input[type="text"],input[type="password"],input[type="number"],input[type="tel"],	input[type=password],input[type=email]
+{
+height:30px;
+width:400px;
+border-radius:5px;
+box-shadow:2px 2px;
+}
+*
+{
+font-size:24px;
+}
+
+body {
+	background-image:url('gym1.jpg');
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	font-size:15px;
+}
+table {
+border-collapse: collapse;
+width 100%;
+}
+
+th,tr {
+	text-align: left;
+	padding:18px;
+}
+img {
+ border-radius:50%;
+ margin-right: 10px;
+ margin-left: 450px;
+ float: left;
+ }
+div.header
+{ 
+  padding: 10px;
+  color: white;
+  display: block;
+  background-color: black;
+  width:"100%"
+  margin: 0px;
+}
+</style>
+</head>
+
+<script>  
+function validateForm() {  
+
+    var pw1 = document.getElementById("pswd1").value;  
+    var pw2 = document.getElementById("pswd2").value;  
+    var name1 = document.getElementById("fname").value;  
+    var name2 = document.getElementById("lname").value;  
+      
+    if(name1 == "") {  
+      document.getElementById("blankMsg").innerHTML = "**Fill the first name";  
+      return false;  
+    }  
+
+    if(!isNaN(name1)){  
+      document.getElementById("blankMsg").innerHTML = "**Only characters are allowed";  
+      return false;  
+    }  
+  
+    if(!isNaN(name2)){  
+      document.getElementById("charMsg").innerHTML = "**Only characters are allowed";  
+      return false;  
+    }   
+
+    if(pw1 == "") {  
+      document.getElementById("message1").innerHTML = "**Fill the password please!";  
+      return false;  
+    }  
+
+    if(pw2 == "") {  
+      document.getElementById("message2").innerHTML = "**Enter the password please!";  
+      return false;  
+    }   
+     
+    if(pw1.length < 8) {  
+      document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";  
+      return false;  
+    }  
+  
+    if(pw1.length > 15) {  
+      document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";  
+      return false;  
+    }  
+    
+    if(pw1 != pw2) {  
+      document.getElementById("message2").innerHTML = "**Passwords are not same";  
+      return false;  
+    } else {  
+      alert ("Your password created successfully");  
+      document.write("Form has been submitted successfully");  
+    }  
+ }  
+</script>
+<body>
+
+
+<div class="header">
+<img src="logo.jpg" alt="" width="85px" height="65px">
+  <h1><strong>Fitness Register Page</strong></h1>
+</div>
+<hr width="35%" size="6px" color="blue"> 
+<hr size="2px" color="black">
+<hr size="2px" color="black">
+
+
+
+<form onsubmit ="response.html" action="response.html"> 
+<table align="center">
+<tr>
+<th><label for="fnmae">First Name:</label>
+<td><input type="text" id="fname" name="fname" placeholder="Enter your First Name"></td>
+<td><span id = "blankMsg" style="color:black "> </span> </td>
+</tr>
+
+<tr>
+<th><label for="lname">Last Name:</label></th>
+<td><input type="text" id="lname" name="lname" placeholder="Enter your Last Name"></td>
+<td><span id = "charMsg" style="color:red"> </span></td>
+</tr>
+
+<tr>
+<th><label for="uname">User Name:</label></th>
+<td><input type="text" id="uname" name="uname" placeholder="Enter your User Name" ></td>
+<td></td>
+</tr>
+
+<tr>
+<th><label for="email">E-mail : </label></th>
+<td><input type="email" id="email" name="email" placeholder="Enter your E-mail"></td>
+<td></td>
+</tr>
+
+<tr>
+<th><label for="Phone">Phone No :</label></th>
+<td><input type="tel" id="Phone" name="Phone" placeholder="Enter your Phone No"></td>
+<td></td>
+</tr>
+
+
+<tr>
+<th><label for="pass">Password :</label></th>
+<td><input type="password" id="psw1" name="pass" placeholder="Enter your Password" pattern="(?=.[0-9])(?=.[A-Z]).{8,15}" ></td>
+<td><span id = "message1" style="color:red"> </span></td>
+</tr>
+
+
+<tr>
+<th><label for="pass">Re-Password :</label></th>
+<td><input type="password" id="psw2" name="pass" placeholder="Re-Enter your Password"></td>
+<td><span id = "message2" style="color:red"> </span> </td>
+</tr>
+
+
+<tr>
+<th><label for="gender">Gender :</label></th>
+<td><input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label></td>
+<td></td>
+</tr>
+
+
+
+
+
+<tr>
+<th><label for="city">Enter your City :</label></th>
+<td><select name="city">
+<optgroup label="City">
+<option value="Ahmedabad">Ahmedabad</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Chennai">Chennai</option>
+<option value="Agra">Agra</option>
+<option value="Hyderabad">Hyderabad</option>
+<option value="Pune">Pune</option>
+<option value="Jaypur">Jaypur</option>
+<option value="Delhi">Delhi</option>
+<option value="KolKata">KolKata</option>
+<option value="Surat">Surat</option>
+<option value="Nagpur">Nagpur</option>
+<option value="Indor">Indor</option>
+<option value="Lucknow">Lucknow</option>
+<option value="Bhopal">Bhopal</option>
+</optgroup>
+</select></td>
+<td></td>
+</tr>
+
+<tr><th><input type="submit" value="Register"></th>
+<th><input type="reset" value="Clear"></th>
+<td></td></tr>
+
+
+
+
+
+</div>
+
+
+</form>
+</table>
+</body>
+</html>
